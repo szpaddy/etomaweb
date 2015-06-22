@@ -3,6 +3,25 @@
 	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
 	version="2.4">
+	<display-name>etomaweb</display-name>
+	<!-- 配置spring配置文件加载的位置 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:applicationContext.xml</param-value>
+	</context-param>
+	<!-- 设置spring的配置文件 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<!-- 设置struts2配置文件 -->
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
 	<servlet>
 		<servlet-name>qrcode</servlet-name>
 		<servlet-class>com.etoma.core.qrcode.servlet.QrcodeServlet</servlet-class>
@@ -11,4 +30,8 @@
 		<servlet-name>qrcode</servlet-name>
 		<url-pattern>/servlet/qrcode</url-pattern>
 	</servlet-mapping>
+	<!-- session超时设置，以分钟为单位 -->
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
 </web-app>
