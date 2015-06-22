@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.4.1.min.js"></script>
+<script type="text/javascript" src="js/jiyuesuixiang.js"></script>
+<link rel="stylesheet" type="text/css" href="css/pulicCs.css"/>
+<link rel="stylesheet" type="text/css" href="css/jiyuesuixiang.css"/>
+<title>集约随享</title>
+<script type="text/javascript">
+$(function(){
+	var info_html="";
+	$.ajax({
+		url:"http://192.168.1.107:8080/shopxx30/api/intensive/rule.jhtml",
+		type:"GET",
+		dataType:"json",
+		success: function(data){
+			for(var i=0;i<data.list.length;i++){
+				info_html+="<p>"+data.list[i].rule+"</p>";
+			}
+			$("#jyInfo .info").html(info_html);
+		}
+	});
+	var user_html="",jyInfo="";
+	$("#jyInfo img").tap(function(){
+		$.ajax({
+			url:"http://192.168.1.107:8080/shopxx30/api/intensive/product.jhtml?productId=63",
+			type:"GET",
+			dataType:"json",
+			success: function(data){
+				for(var i=0;i<data.list[0].productImages.length;i++){
+					var name = "#banner_img li:eq("+i+")";
+					$(name).find("img").attr("src",data.list[0].productImages[i].medium);
+					var shopImg = "#shopImg li:eq("+i+")";
+					$(shopImg).find("img").attr("src",data.list[0].productImages[i].medium);
+					user_html+="<div>"+
+								"<div>"+
+									"<img src='imgs/userHead.png'><span>用户名</span><span>1分钟前</span>"+
+								"</div>"+
+								"<div>"+
+									"<a href='pages/index.html' target='_self'><img src='"+data.list[0].productImages[i].medium+"'></a>"+
+								"</div>"+
+								"<p>"+data.list[0].fullName+"</p>"+
+								"<div class='btn'>"+
+									"<div class='zan on'><span>赞0</span></div>"+
+									"<div><a data-ajax='false' href='#'><span>18</span></a></div>"+
+									"<div><a data-ajax='false' href='#'><span>分享</span></a></div>"+
+									"<div><button>集约</button></div>"+
+									"<p class='cb'></p>"+
+								"</div></div>";
+				}
+				$("#user").html(user_html);
+			}
+		});
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="divPosition">
+	
+    <div id="jyInfo">
+    <img src="imgs/close.png">
+        <div>
+            <div>
+                <h1>集约规则</h1>
+                <div class="info">
+                    <p>规则，在我们生活中有许多规则规则，在我们生活中有许多规则规则，在我们生活中有许多规则规则，在我们生活中有许多规则规则，在我们生活中有许多规则</p>
+                    <p>规则，在我们生活中有许多规则规则，在我们生活中有许多规则规则，在我们生活中有许多规则规则，在我们生活中有许多规则规则，在我们生活中有许多规则</p>
+                    <p>规则，在我们生活中有许多规则规则，在我们生活中有许多规则规则，在我们生活中有许多规则规则，在我们生活中有许多规则规则，在我们生活中有许多规则</p>
+                    <p>规则，在我们生活中有许多规则规则，在我们生活中有许多规则规则，在我们生活中有许多规则规则，在我们生活中有许多规则规则，在我们生活中有许多规则</p>
+                    <p>规则，在我们生活中有许多规则规则，在我们生活中有许多规则规则，在我们生活中有许多规则规则，在我们生活中有许多规则规则，在我们生活中有许多规则</p>
+                    <p>规则，在我们生活中有许多规则规则，在我们生活中有许多规则规则，在我们生活中有许多规则规则，在我们生活中有许多规则规则，在我们生活中有许多规则</p>
+                    <p>规则，在我们生活中有许多规则规则，在我们生活中有许多规则规则，在我们生活中有许多规则规则，在我们生活中有许多规则规则，在我们生活中有许多规则</p>
+                </div>
+            </div>
+            <center>
+                <button>下载APP</button>
+                <div>更多优惠哟</div>
+            </center>
+        </div>
+    </div>
+	<div id="head">
+    	<img src="imgs/ewm.png" class="left">
+        <center>
+        	<h1>集约随享</h1>
+        </center>
+        <a data-ajax="false" href="pages/xiaoxihezi.html"><img src="imgs/xixi.png" class="right"></a>
+    </div>
+    
+    
+      <div id="titleImg">
+        <div id="banner">
+          <ul id="banner_img">
+            <li class="on"> <img src="../imgs/banner.png"> </li>
+            <li class="on"> <img src="../imgs/bannerImg.png"> </li>
+          </ul>
+          <ul id="banner_list">
+          </ul>
+          <span id="banner_left"></span> <span id="banner_right"></span>
+        </div>
+      </div>
+      
+      
+    <div id="shopImg">
+    	<ul>
+        	<li>
+            	<a href="pages/index.html" target="_self"><img src="imgs/9.png"></a>
+                <div><button>集约</button><label data-role="none";>已集约0000人</label></div>
+            </li>
+            <li>
+            	<a href="pages/index.html" target="_self"><img src="imgs/9.png"></a>
+                <div><button>集约</button><label data-role="none";>已集约0000人</label></div>
+            </li>
+            <li>
+            	<a href="pages/index.html" target="_self"><img src="imgs/9.png"></a>
+                <div><button>集约</button><label data-role="none";>已集约0000人</label></div>
+            </li>
+        </ul>
+        <div class="cb"></div>
+        <div id="info">
+        	<p><a href="pages/wodexiaoxi.html" data-ajax="false">会员<em>张三</em>积极参与<em>集约随享</em>累计获得创业基金<em>1800</em>元</p>
+        </div>
+        <div id="user">
+        	<div>
+                <div>
+                    <img src="imgs/userHead.png"><span>用户名</span><span>1分钟前</span>
+                </div>
+                <div>
+                    <img src="imgs/12.png">
+                </div>
+                <p>5分！口感清爽甘冽，齿颊留香，令人回味无穷！</p>
+                <div class="btn">
+                    <div class="zan on"><span>赞0</span></div>
+                    <div><a data-ajax="false" href="#"><span>18</span></a></div>
+                    <div><a data-ajax="false" href="#"><span>分享</span></a></div>
+                    <div><a href="pages/index.html" target="_self"><button>集约</button></a></div>
+                    <p class="cb"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bottom">
+        <a data-ajax="false" href="pages/wodejiyue.html">我的集约</a>
+        <a data-ajax="false" href="#">下载APP</a>
+	</div>
+</div>
+</body>
+</html>

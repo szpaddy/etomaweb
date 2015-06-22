@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+<title>商品详情</title>
+<link rel="stylesheet" type="text/css" href="../css/pulicCs.css"/>
+<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../js/jquery.mobile-1.4.1.min.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/index.css"/>
+<script type="text/javascript">
+$(function(){
+	var img_width_html = "",userReview_html="";
+	$.ajax({
+		url:"http://192.168.1.107:8080/shopxx30/api/intensive/product.jhtml?productId=63",
+		type:"GET",
+		dataType:"json",
+		success: function(data){
+			for(var i=0;i<data.list[0].productImages.length;i++){
+				var name = "#banner_img li:eq("+i+")";
+				$(name).find("img").attr("src",data.list[0].productImages[i].medium);
+				img_width_html+="<li><img src='"+data.list[0].productImages[i].medium+"'></li>";
+			}
+			for(var i=0;i<data.reviews.length;i++){
+				userReview_html+="<li><div>"+data.reviews[i].member.username+"</div><div><p>"+data.reviews[i].content+"</p></div><div>"+data.reviews[i].createDate+"</div></li>";
+			}
+			$(".info_p").html(data.list[0].fullName);
+			$("#prict strong").html("￥"+data.list[0].price);
+			$("#prict .point span").html(data.marketPrice);
+			$("#prict p:last em").html(data.monthSales);
+			$("#privilege span").html(data.point);
+			$(".img_width").html(img_width_html);
+			$("#userReview ul").html(userReview_html);
+		}
+	});
+});
+</script>
+</head>
+
+<body style="overflow-x:hidden">
+<!--商品页面-->
+<div id="nav">
+  <div class="left"><a data-role="button" data-rel="back" data-icon="back" data-icon="grid"><img src="../imgs/pageUp.png"></a></div>
+  <ul>
+    <li><span>商品</span></li>
+    <li><span>详情</span></li>
+    <li><span>评价</span></li>
+  </ul>
+</div>
+<div id="divpage_parents">
+  <div id="divPage0">
+    <div id="titleImg">
+      <div id="banner">
+        <ul id="banner_img">
+          <li class='on'><img src='../imgs/banner.png'></li>
+          <li class='on'><img src='../imgs/bannerImg.png'></li>
+        </ul>
+        <ul id="banner_list">
+        </ul>
+        <span id="banner_left"></span> <span id="banner_right"></span> </div>
+    </div>
+    <div id="info">
+      <div>
+        <p class="info_p">52°五粮液1618陶瓷瓶500ml特产名酒52度正品高度白酒水送礼名酒</p>
+      </div>
+      <div> <a data-ajax="false" href="#">
+        <div><img src="../imgs/fx.png"></div>
+        <p>分享</p>
+        </a> </div>
+      <p class="cb"></p>
+    </div>
+    <div id="prict">
+      <p><strong>￥678.00</strong><em>手机专享价</em><em>年中大促</em></p>
+      <p class="point">价格<span>1599.00</span></p>
+      <p><span>快递:0.00</span><span>月销量<em>40</em>件</span><span></span></p>
+    </div>
+    <div id="privilege">
+      <div><a data-ajax="false" href="zhifufnagshi.html">极速汇款</a> </div>
+      <div> <em>送</em><span>399</span>积分 </div>
+      <div> <em>劵</em><a data-ajax="false" href="#">点击领取优惠劵</a> </div>
+      <div class="guige">
+        <h1>产品参数</h1>
+        <img src="../imgs/shopInfo.png"> </div>
+      <!--
+        <div id="service">
+        	<div>
+        		<img src="../imgs/五粮液图标.png">
+            	<span>五粮液品牌旗舰店</span>
+            </div>
+            <p class="cb"></p>
+            <ul>
+            	<li>描述:4.8<span>低</span></li>
+            	<li>服务:4.7<span>低</span></li>
+            	<li>物流:4.8<span>低</span></li>
+            </ul>
+            <p class="cb"></p>
+            <div>
+            	<ul>
+            		<li><a data-ajax="false" href="#">全部商品(0)</a></li>
+                	<li><a data-ajax="false" href="#">进入店铺</a></li>
+                </ul>
+               	<p class="cb"></p>
+            </div>
+        </div>
+        --> 
+    </div>
+  </div>
+  <!--商品详情-->
+  <div id="divPage1">
+    <ul class="img_width">
+      <li><img src="../imgs/banner.png"></li>
+      <li><img src="../imgs/bannerImg.png"></li>
+      <li><img src="../imgs/serviceInfo.png"></li>
+    </ul>
+  </div>
+  <!--
+      <center>
+        ------------  看了又看  ------------
+      </center>
+      <ul class="shopInfo">
+        <li> <a data-ajax="false" href="#"><img src="../imgs/serviceInfos.png"></a>
+          <p>会员独享52°五粮液1000ml普无水晶装...</p>
+          <p>￥1098.0</p>
+        </li>
+        <li> <a data-ajax="false" href="#"><img src="../imgs/serviceInfos.png"></a>
+          <p>会员独享52°五粮液1000ml普无水晶装...</p>
+          <p>￥1098.0</p>
+        </li>
+        <li> <a data-ajax="false" href="#"><img src="../imgs/serviceInfos.png"></a>
+          <p>会员独享52°五粮液1000ml普无水晶装...</p>
+          <p>￥1098.0</p>
+        </li>
+        <li> <a data-ajax="false" href="#"><img src="../imgs/serviceInfos.png"></a>
+          <p>会员独享52°五粮液1000ml普无水晶装...</p>
+          <p>￥1098.0</p>
+        </li>
+        <li> <a data-ajax="false" href="#"><img src="../imgs/serviceInfos.png"></a>
+          <p>会员独享52°五粮液1000ml普无水晶装...</p>
+          <p>￥1098.0</p>
+        </li>
+        <li> <a data-ajax="false" href="#"><img src="../imgs/serviceInfos.png"></a>
+          <p>会员独享52°五粮液1000ml普无水晶装...</p>
+          <p>￥1098.0</p>
+        </li>
+        <li> <a data-ajax="false" href="#"><img src="../imgs/serviceInfos.png"></a>
+          <p>会员独享52°五粮液1000ml普无水晶装...</p>
+          <p>￥1098.0</p>
+        </li>
+        <li> <a data-ajax="false" href="#"><img src="../imgs/serviceInfos.png"></a>
+          <p>会员独享52°五粮液1000ml普无水晶装...</p>
+          <p>￥1098.0</p>
+        </li>
+      </ul>
+      <div class="cb"></div>
+    --> 
+  <!--评论页面-->
+  <div id="divPage2">
+  <!--
+    <div id="infoTietle"> <span>全部</span><span>追加(2)</span><span>有图(2)</span><span>包装不错(2)</span><span>质量好(2)</span><span>态度不错(2)</span><span>快递不错(2)</span>
+</div>
+-->
+    <div id="userReview">
+      <ul>
+        <li>
+          <div>用户名</div>
+          <div>
+            <p>总的来说还是很满意的总的来说还是很满意的总的来说还是很满意的总的来说还是很满意的总的来说还是很满意的总的来说还是很满意的</p>
+          </div>
+          <div>2015-02-07 10:18:08</div>
+        </li>
+        <li>
+          <div>用户名</div>
+          <div>
+            <p>总的来说还是很满意的</p>
+          </div>
+          <div>2015-02-07 10:18:08</div>
+        </li>
+        <li>
+          <div>用户名</div>
+          <div>
+            <p>总的来说还是很满意的</p>
+          </div>
+          <div>2015-02-07 10:18:08</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+<!--底部导航-->
+<div id="headImg"><a data-ajax="false" href="javascript:scrollTo(0,0);"><img src="../imgs/headicon.png"></a></div>
+<div id="btns">
+  <div>
+    <div><a data-ajax="false" href="../jiyuesuixiang.html">首页</a></div>
+    <div><a data-ajax="false" href="#">客服</a></div>
+  </div>
+  <div>
+    <div><a data-ajax="false" href="login.html">马上下单</a></div>
+    <div><a data-ajax="false" href="login.html">我要集约</a></div>
+  </div>
+</div>
+</body>
+</html>

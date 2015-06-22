@@ -1,0 +1,100 @@
+/* CSS Document */
+#divPage1,#divPage2{ display:none;}
+/*定位*/
+#divPosition{ position:relative;}
+#headImg{ background:#fff; position:fixed; right:10px; top:300px; z-index:9; border-radius:50%; overflow:hidden;}
+#divPage0,#divPage1,#divPage2{ margin-top:50px;}
+#nav{ background:#fff; position:fixed; left:0px; top:0px; z-index:99;}
+/*商品页面*/
+#info,#prict,#shopTitle_info,#service{ padding:5px 20px;}
+#nav{ height:50px; width:100%; border-bottom:1px solid #bcbcbc;}
+#nav ul{ width:60%; color:#a3a3a3; margin:0px auto; padding-right:20px;}
+#nav ul li{ width:30%; line-height:48px; text-align:right; font-size:20px; float:left;}
+#nav ul li.first span{ padding:9px 5px; color:#dd212f; border-bottom:4px solid #dd212f;}
+#nav .left{ float:left; margin-top:15px; margin-left:10px;}
+#nav .left img{ width:12px;}
+#titleImg{ width:100%;}
+#banner_img{ width:100%;}
+#banner_img img{ width:100%;}
+#banner_img li{ width:100%; position:absolute;}
+#banner_img li.on{ z-index:5;}
+#banner_img li a{ width:100%; height:100%; display:block;}
+#info{ background:#f5f5f5; font-size:16px;}
+#info>div{ float:left;}
+#info>div:first-child{ width:70%; padding-right:20px; border-right:1px solid #ccc;}
+#info>div:first-child p{ width:100%;}
+#info>div:nth-child(2){ float:right; margin-top:5px;}
+#info img{ width:25px;}
+#prict p{ line-height:30px;}
+#prict p:first-child strong{ font-size:18px; font-weight:bold; color:#e01d2b; margin-right:30px;}
+#prict p:first-child em{ padding:5px; background:#d82529; color:#fff; margin-right:5px;}
+#prict p:nth-child(2){ color:#666;}
+#prict p:nth-child(2) span{ margin-left:10px; text-decoration:line-through;}
+#prict p:last-child span{ display:inline-block; width:33%;}
+#prict p:last-child span:nth-child(2){ text-align:center;}
+#prict p:last-child span:last-child{ text-align:right;}
+#privilege{ padding-bottom:15px; background:#f9f9f9;}
+#privilege div{ color:#9a9a9a; padding:15px 20px; border-bottom:1px solid #f1f1f1;}
+#privilege div a{ color:#9a9a9a;}
+#privilege div:first-child a{ padding:5px 0px; padding-left:30px; background:url(../imgs/icon.png) no-repeat 0px 3px;}
+#privilege div:first-child a:last-child{ margin-left:20px;}
+#privilege div span{ color:#e0323c; margin-right:5px;}
+#privilege div:first-child{ border-top:1px solid #f1f1f1;}
+#privilege em{ padding:3px 5px; background:#e12526; color:#fff; font-size:12px; font-weight:bold; border-radius:10%; margin-right:5px;}
+#privilege div.guige{ height:20px; background:#fff;}
+#privilege div.guige h1{ line-height:20px; color:#383838; float:left;}
+#privilege div.guige img{ float:right; margin-top:10px;}
+#shopTitle_info ul{ width:100%; height:35px; overflow:hidden;}
+#shopTitle_info li{ margin-right:5px; margin-bottom:5px; text-align:center; float:left;}
+#shopTitle_info li div{ padding:5px; color:#e87379; border:1px solid #ecd0cf; border-radius:7%;}
+#service div img,#service div span{ float:left;}
+#service div img{ width:45px; margin-right:10px;}
+#service div span{ color:#393939;}
+#service ul{ margin-top:20px;}
+#service ul li{ width:33%; float:left;}
+#service ul li:nth-child(2){ text-align:center;}
+#service ul li:last-child{ text-align:right;}
+#service ul li{ color:#49761b;}
+#service ul li span{ padding:2px 5px; background:#49761b; color:#fff; border-radius:10%; margin-left:5px;}
+#service div:last-child{ margin-top:20px;}
+#service div:last-child li{ width:45%; height:40px; text-align:center; border:1px solid #d3d3d3; border-radius:5%; overflow:hidden;}
+#service div:last-child li:first-child{ margin-right:10px;}
+#service div:last-child li a{ color:#3b3b3b; display:inline-block; line-height:40px; padding-left:35px;}
+#service div:last-child li:first-child a{ background:url(../imgs/shopAll.png) no-repeat 10px 10px; background-size:20px 20px;}
+#service div:last-child li:last-child a{ background:url(../imgs/goshoping.png) no-repeat 10px 10px; background-size:20px 20px;}
+
+/*详情页面*/
+#divPage1 .img_width img{ width:100%;}
+#divPage1 center{ color:#b8b8b8; margin-top:20px;}
+#divPage1 .shopInfo ul{ padding-right:10px; background:#f8f8f8;}
+#divPage1 .shopInfo li{ width:45%; background:#fff; border:1px solid #cfcfcf; border-top-right-radius:5%; border-top-left-radius:5%;}
+#divPage1 .shopInfo li{ float:left; margin-left:10px; margin-bottom:10px;}
+#divPage1 .shopInfo li img{ width:100%;}
+#divPage1 .shopInfo li p{ margin:3px;}
+#divPage1 .shopInfo li p:first-child{ color:#2c2c2c;}
+#divPage1 .shopInfo li p:last-child{ color:#020202;}
+/*评论页面*/
+#infoTietle{ background:#f3f3f3; padding:5px 10px;}
+#infoTietle span{ color:#c03f43; font-weight:bold; display:inline-block; margin:7px 5px; padding:5px; border:1px solid #c23639;}
+#infoTietle span.first{ background:#c23639; color:#fff;}
+#userReview li{ padding:10px 20px; border-bottom:1px solid #f0f0f0;}
+#userReview li div:first-child{ color:#485754; font-weight:bold;}
+#userReview li div:nth-child(2){ color:#6d6d6d; margin:10px 0px;}
+#userReview li div:last-child{ color:#aeaeae; font-size:12px;}
+#bac{ background:#f3f3f3; height:20px; margin-top:10px;}
+
+/*底部导航*/
+#headImg a{ display:block; width:40px; height:40px;}
+#headImg img{ width:40px;}
+#btns{ height:50px; width:100%; position:fixed; left:0px; bottom:0px; background:#fff; z-index:99; border-top:1px solid #d8d8d8;}
+#btns>div:first-child{ width:40%;}
+#btns>div:first-child div{ width:45%; text-align:center; float:left; margin-top:2px;}
+#btns>div:first-child div a{ display:inline-block; padding-top:25px;}
+#btns>div:first-child div:first-child{ border-right:1px solid #d8d8d8;}
+#btns>div:first-child div:first-child a{ background:url(../imgs/index.png) no-repeat 6px 5px; background-size:20px 20px;}
+#btns>div:first-child div:last-child a{ background:url(../imgs/user_service.png) no-repeat 6px 5px; background-size:20px 20px;}
+#btns>div:last-child{ width:60%; float:right;}
+#btns>div:last-child div{ width:50%; line-height:50px; text-align:center; float:left;}
+#btns>div:last-child div a{ color:#fff; font-weight:bold;}
+#btns>div:last-child div:first-child{ background:#ffa200;}
+#btns>div:last-child div:last-child{ background:#cd3439;}

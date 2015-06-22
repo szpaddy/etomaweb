@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+<link rel="stylesheet" type="text/css" href="../css/pulicCs.css"/>
+<script type="text/javascript" src="../js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery.toggle-password.js"></script>
+<script type="text/javascript" src="../js/jquery.mobile-1.4.1.min.js"></script>
+<script type="text/javascript" src="../js/login.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/login.css"/>
+<title>登录</title>
+<script type="text/javascript">	
+$(function(){
+	$(".submit_btn").tap(function(){
+		var userName = $("#username").val();
+		var psw = $("#password").val();
+		if(userName == "" || psw == ""){
+			alert("用户名或密码为空");
+			return;
+		}
+		$.support.cors = true; 
+		$.ajax({
+			url: "http://192.168.1.107:8080/shopxx30/api/login/submit.jhtml",
+			data:{"username":userName,"password":psw},
+			type: "POST", 
+			success: function (result) {    
+				alert(vdata.msg);
+				if(vdata.msg == "登录成功"){
+					document.location.href="dingdanzhifu.html";
+				}
+			}
+		});
+
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="divPosition">
+	<div id="logIn">
+    	<a data-role="button" data-rel="back" data-icon="back" data-icon="grid"><img src="../imgs/1.png"></a>
+        <center>
+        	<h1>会员登录</h1>
+        </center>
+    </div>
+    <div id="title" class="cb">
+    	<center>共舞互联网+ , 创业赢未来</center>
+    </div>
+    <form action="" method="post" target="_self">
+        <table>
+            <tr>
+                <td>会员账户</td>
+                <td><input type="text" id="username"></td>
+                <td><img src="../imgs/2.png"></td>
+            </tr>
+            <tr>
+                <td>登录密码</td>
+                <td><input type="password" id="password"></td>
+                <td id="togglePassword"><img src="../imgs/3.png"></td>
+            </tr>
+        </table>
+        <div class="btn">
+        	<input type='submit' value='登 录' class='submit_btn' data-role="none">
+        </div>
+    </form>
+    <a data-ajax="false" href="register.html" class="left">立即注册</a>
+    <a data-ajax="false" href="#" class="right">找回密码</a>
+    <div class="cb"></div>
+    <center>
+    	<button>下载APP</button>
+        <div>更多优惠哟</div>
+        <p>中国人权发展基金会世界一家公益基金</p>
+        <p>深圳前海中移通商务有限公司</p>
+    </center>
+</div>
+</body>
+</html>

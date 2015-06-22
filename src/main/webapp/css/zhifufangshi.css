@@ -1,0 +1,19 @@
+/* CSS Document */
+body{ background:#ebebeb;}
+#head{ width:100%; height:60px; background:#fff; border-bottom:1px solid #ccc; position:relative;}
+#head .left{ width:15px; position:absolute; left:10px; top:15px;}
+#head .right{ width:25px; position:absolute; right:10px; top:15px;}
+#head center{ font-size:22px; line-height:60px;}
+#title{ width:100%; height:50px; border-bottom:1px solid #ccc; padding:0px 10px;}
+#title span{ display:block; line-height:50px;}
+#title .left{ float:left;}
+#title .right{ float:right; color:#e22e2d; margin-right:10px;}
+table{ background:#fff;}
+table tr td:first-child img{ border-radius:3%;}
+table tr td:last-child img{ transform:rotate(270deg)}
+table tr td:last-child{ vertical-align:middle;}
+table tr td:nth-child(2),table tr td:last-child{ border:none;}
+table tr{ border-bottom:1px solid #ccc;}
+table tr td:nth-child(2){ width:55%;}
+table tr td:last-child{ width:20%;}
+table{ width:100%;}

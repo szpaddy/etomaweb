@@ -1,0 +1,56 @@
+/* CSS Document */
+body{ background:#ebebeb;}
+#head{ width:100%; height:60px; background:#fff; border-bottom:1px solid #ccc; position:relative;}
+#head .left{ width:30px; position:absolute; left:10px; top:15px;}
+#head .right{ width:30px; position:absolute; right:10px; top:13px;}
+#head center{ font-size:22px; line-height:60px;}
+#titleImg{ width:100%;}
+#banner_img{ width:100%;}
+#banner_img img{ width:100%;}
+#banner_img li{ width:100%; position:absolute;}
+#banner_img li.on{ z-index:5;}
+#banner_img li a{ width:100%; height:100%; display:block;}
+#shopImg{ padding:20px 15px;}
+#shopImg ul{ width:100%;}
+#shopImg ul li{ width:29%; background:#fff; border:1px solid #ccc; margin-left:15px; float:left;}
+#shopImg ul li:first-child{ margin-left:0px;}
+#shopImg ul li img{ width:100%;}
+#shopImg ul li div{ width:100%; text-align:center; margin:10px 0px;}
+#shopImg ul li button,#shopImg ul li label{ display:inline-block;}
+#shopImg ul li button{ width:50px; height:25px; font-weight:bold; color:#fff; background:#e22e2d; border:none; border-radius:5%; margin-right:10px;}
+#shopImg ul li label{ font-size:10px;}
+#info{ width:100%; background:#fff; text-align:center; border:1px solid #ccc; margin-top:20px;}
+#info p{ padding:10px 0px; text-indent:45px; background:url(../imgs/xix.png) no-repeat 10px 8px; background-size:30px auto;}
+#user>div{ background:#fff; border:1px solid #ccc; margin-top:20px;}
+#user>div>div:first-child{ width:100%; height:70px;}
+#user>div>div:first-child img{ width:49px; border-radius:50%; float:left; margin:10px;}
+#user>div>div:first-child span{ color:#000; float:left; margin-top:25px;}
+#user>div>div:first-child span:last-child{ color:#999; float:right; margin-right:10px;}
+#user>div>div:nth-child(2){ width:100%;}
+#user>div>div:nth-child(2) img{ width:100%;}
+#user>div>p{ width:90%; text-align:center; padding:10px 0px; border-bottom:1px solid #ccc; margin:0px auto;}
+#user .btn div{ width:25%; text-align:center; float:left;}
+#user .btn div span{ display:inline-block; line-height:50px; padding-left:23px;}
+#user .btn div:first-child span{ background:url(../imgs/13.png) no-repeat 0px 17px; background-size:20px auto;}
+#user .btn div:first-child span.on{ background:url(../imgs/15.png) no-repeat 0px 17px; background-size:20px auto;}
+#user .btn div:nth-child(2) span{ background:url(../imgs/14.png) no-repeat 0px 17px; background-size:20px auto;}
+#user .btn div:nth-child(3) span{ background:url(../imgs/16.png) no-repeat 0px 17px; background-size:20px auto;}
+#user .btn div button{ height:25px; width:55px; color:#fff; background:#e22e2d; border:none; border-radius:5%; margin-top:13px;}
+#bottom{ width:100%;}
+#bottom a{ display:inline-block; width:50%; padding:15px 0px; text-align:center; color:#fff; font-size:16px; float:left;}
+#bottom a:first-child{ background:#e22e2d;}
+#bottom a:last-child{ background:#488dea;}
+
+
+/*集约规则*/
+#divPosition{ position:relative;}
+#divPosition #jyInfo{ width:100%;}
+#jyInfo img{ width:80px; border:1px solid #000;}
+#jyInfo{ position:absolute; top:0px; left:0px; height:600px; overflow:hidden; z-index:99;}
+#jyInfo>div{ background:#fff; padding:20px 15px; border-top:1px solid #000;}
+#jyInfo>div div h1{ width:100%; text-align:center; font-size:18px; font-weight:bold; color:#e22e2d;}
+#jyInfo>div div p{ color:#333; font-size:12px; margin-top:20px;}
+#jyInfo>div div:first-child{ width:102%; height:350px; overflow:auto;}
+#jyInfo>div center{ margin-top:40px;}
+center button{ width:30%; height:40px; color:#fff; background:#488dea; border:none; border-radius:5%;}
+center div{ color:#e85857; margin-top:3px; margin-bottom:100px;}

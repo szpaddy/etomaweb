@@ -1,0 +1,28 @@
+/* CSS Document */
+body{ background:#ebebeb;}
+#head{ width:100%; height:60px; background:#fff; border-bottom:1px solid #ccc; position:relative;}
+#head a:first{ display:block; width:15px; height:100%; border:1px solid;}
+#head .left{ position:absolute; left:10px; top:15px;}
+#head .left img{ width:15px;}
+#head .right{ width:25px; position:absolute; right:10px; top:15px;}
+#head center{ font-size:22px; line-height:60px;}
+#prict div:first-child{ border-bottom:1px solid #ccc;}
+#prict p{ width:320px; line-height:60px; font-size:18px; color:#26bb17; text-indent:25px; background:url(../imgs/aq.png) no-repeat 0px 15px; margin:0px auto;}
+#prict div:last-child{ line-height:100px; font-size:36px; color:#e22e2d; font-weight:bold; text-align:center; margin:0px 20px; border-bottom:1px dashed #ccc;}
+#info{ padding:20px 20px 30px 20px;}
+#info span{ display:block; line-height:30px; font-size:18px;}
+#info>div{ width:50%; float:left;}
+#info>div:nth-child(2){ color:#929292; text-align:right;}
+form table{ width:100%; background:#fff; border:1px solid #cccccc; border-radius:3%; overflow:hidden;}
+form input{ width:90%; border:none;}
+form table tr{ height:50px; color:#333; border-bottom:1px solid #ccc;}
+form table tr:last-child{ border:none;}
+form table tr td{ text-indent:5px; font-size:18px;}
+form table tr td:first-child{ width:90px;}
+.btn{ padding:20px; padding-bottom:0px;}
+.btn button{ width:100%; height:40px; background:#ccc; color:#666; font-size:18px;}
+#divPosition>center{ margin-top:200px;}
+center button{ width:30%; height:40px; color:#fff; background:#488dea; border:none; border-radius:5%;}
+center div{ color:#e85857; margin-top:5px; margin-bottom:100px;}
+#divPosition>center p{ color:#666;}
+#divPosition>center p span{ color:#e85857;}

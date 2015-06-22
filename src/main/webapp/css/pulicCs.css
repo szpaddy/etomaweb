@@ -1,0 +1,15 @@
+/* CSS Document */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {margin:0;padding:0;} 
+table {border-collapse:collapse;border-spacing:0;} 
+fieldset,img {border:0;} 
+address,caption,cite,code,dfn,em,strong,th,var {font-style:normal;font-weight:normal;} 
+ol,ul {list-style:none;} 
+caption,th {text-align:left;} 
+h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:normal;}
+abbr,acronym { border:0;}
+body{ font-size:14px; font-family:SimSun; color:#323232; font-family:微软雅黑;}
+p{ line-height:20px; font-size:14px;}
+a{ color:#666; text-decoration:none;}
+.cb{ color:#999; clear:both;}
+input,select{ margin:0px; padding:0px; outline:none; blr:expression(this.onFocus=this.blur());}
+#divPosition{ width:100%; min-width:310px; max-width:720px; margin:0px auto; overflow:hidden;}

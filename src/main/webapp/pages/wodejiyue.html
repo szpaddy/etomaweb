@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+<link rel="stylesheet" type="text/css" href="../css/pulicCs.css"/>
+<link rel="stylesheet" type="text/css" href="../css/wodejiyue.css"/>
+<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../js/jquery.mobile-1.4.1.min.js"></script>
+<script type="text/javascript" src="../js/wodejiyue.js"></script>
+<title>我的集约</title>
+<script type="text/javascript">
+$(function(){
+	var table_html="";
+	$.ajax({
+		url:"http://192.168.1.107:8080/shopxx30/api/intensive/myIntensive.jhtml",
+		type:"GET",
+		dataType:"json",
+		success: function(data){
+				table_html+=""+
+							"<div class='table'>"+
+								"<table>"+
+									"<tr>"+
+										"<td><img src='"+data.list[0].product.image+"'></td>"+
+										"<td>"+data.list[0].product.fullName+"</td>"+
+										"<td><strong>"+"￥"+data.list[0].product.price+"</strong></td>"+
+								   "</tr>"+
+								   "<tr>"+
+										"<td colspan='3'>共1件商品 实付：<strong class='prict'>￥380.00</strong></td>"+
+								   "</tr>"+
+								   "<tr>"+
+										"<td colspan='3'><button class='rem'>删除订单</button><a data-ajax='false' href='#'><button>查看物流</button></a><a data-ajax='false' href='#' class='last'><button>集约随享</button></a></td>"+
+								   "</tr>"+
+								"</table>"+
+							"</div>"
+			$("#table").html(table_html);
+			$(".prict").html("￥"+$("table tr:first strong").html().substr(1));
+		}	
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="divPosition">
+	<div id="head">
+    	<a data-role="button" data-rel="back" data-icon="back" data-icon="grid"><img src="../imgs/1.png" class="left"></a>
+        <center>
+        	<h1>我的集约</h1>
+        </center>
+        <a data-ajax="false" href="../jiyuesuixiang.html"><img src="../imgs/22.png" class="right"></a>
+    </div>
+    <nav>
+    	<ul>
+        	<li><span>待付款</span></li>
+            <li><span>待收货</span></li>
+            <li><span>待发货</span></li>
+            <li><span>待评价</span></li>
+            <li><span>退货售后</span></li>
+        </ul>
+    </nav>
+    <div class="cb"></div>
+    <div id="table">
+    <div class="table">
+        <table>
+            <tr>
+                <td><img src="../imgs/17.png"></td>
+                <td>52度五粮液股份尊耀水晶装.浓香型白酒国产白酒特价...</td>
+                <td><strong>￥528.00</strong></td>
+           </tr>
+           <tr>
+                <td colspan="3">共1件商品 实付：<strong class="prict">￥380.00</strong></td>
+           </tr>
+           <tr>
+                <td colspan="3"><button class="rem">删除订单</button><a data-ajax="false" href="#"><button>查看物流</button></a><a data-ajax="false" href="#" class="last"><button>集约随享</button></a></td>
+           </tr>
+        </table>
+    </div>
+    <div class="table">
+        <table>
+            <tr>
+                <td><img src="../imgs/17.png"></td>
+                <td>52度五粮液股份尊耀水晶装.浓香型白酒国产白酒特价...</td>
+                <td><strong>￥528.00</strong></td>
+           </tr>
+           <tr>
+                <td colspan="3">共1件商品 实付：<strong class="prict">￥380.00</strong></td>
+           </tr>
+           <tr>
+                <td colspan="3"><button class="rem">删除订单</button><a data-ajax="false" href="#"><button>查看物流</button></a><a data-ajax="false" href="#" class="last"><button>集约随享</button></a></td>
+           </tr>
+        </table>
+    </div>
+    <div class="table">
+        <table>
+            <tr>
+                <td><img src="../imgs/17.png"></td>
+                <td>52度五粮液股份尊耀水晶装.浓香型白酒国产白酒特价...</td>
+                <td><strong>￥528.00</strong></td>
+           </tr>
+           <tr>
+                <td colspan="3">共1件商品 实付：<strong class="prict">￥380.00</strong></td>
+           </tr>
+           <tr>
+                <td colspan="3"><button class="rem">删除订单</button><a data-ajax="false" href="#"><button>查看物流</button></a><a data-ajax="false" href="#" class="last"><button>集约随享</button></a></td>
+           </tr>
+        </table>
+    </div>
+    </div>
+</div>
+</body>
+</html>

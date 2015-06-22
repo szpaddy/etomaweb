@@ -1,0 +1,24 @@
+土八酷：
+AppID：wx4917fa9184975de1
+AppSecret：a69f038a5f4c98dacfe40eeb81b0051d
+
+
+应用官网
+http://www.etoma.cn
+
+应用平台
+iOS平台
+应用下载地址：http://
+Bundle ID：com.jecansoft.tubaku
+
+Android平台
+应用下载地址：http://www.baidu.com
+应用签名：fb776d06eba544c2a37b504069cdd16b
+包名：com.jecansoft.tubaku
+
+微信支付商户号：
+1247431501
+
+微信开放平台和商户约定的支付密钥:a69f038a5f4c98dacfe40eeb81b0051d
+
+微信开放平台和商户约定的密钥:a69f038a5f4c98dacfe40eeb81b0051d

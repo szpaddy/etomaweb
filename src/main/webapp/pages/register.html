@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+<link rel="stylesheet" type="text/css" href="../css/pulicCs.css"/>
+<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../js/jquery.mobile-1.4.1.min.js"></script>
+<script type="text/javascript" src="../js/register.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/register.css"/>
+<script type="text/javascript" src="../js/area.js"></script>
+<script type="text/javascript" src="../js/location.js"></script>
+<script type="text/javascript" src="../js/select2.js"></script>
+<script type="text/javascript" src="../js/select2_locale_zh-CN.js"></script>
+
+<link href="../css/select2.css" rel="stylesheet"/>
+<title>注册</title>
+<script type="text/javascript">
+$(function(){
+	$("table img").attr("src","http://192.168.1.107:8080/shopxx30/common/captcha.jhtml");
+	$("table img").click(function(){
+		$(this).attr("src", "http://192.168.1.107:8080/shopxx30/common/captcha.jhtml?captchaId=${captchaId}&timestamp=" + (new Date()).valueOf());
+	});
+	$(".submit_btn").tap(function(){
+		var userName = $("#userName").val();//用户名
+		var password = $("#passWord").val();//用户密码
+		var password2 = $("#password2").val();//确认密码
+		var address = $("#Address").val();//详细地址
+		var phone = $("#phone").val();//电话号码
+		var email = $("#email").val();//邮箱号
+		var captcha = $("#captcha").val();//验证码
+		var phone_value = /^1[3|4|5|8][0-9]\d{4,8}$/;//手机号正则
+		var email_value = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;//邮箱正则
+		if(userName.length<3){
+			alert("用户名不能小于3个字段");
+			return;
+		}
+		if(password.length<6){
+			alert("密码不能小于6个字符");
+			return;
+		}else if(password != password2){
+			alert("两次输入的密码不符");
+			return;
+		}
+		if(address == null){
+			alert("未输入地址");
+			return;
+		}
+		if(!phone_value.test(phone)){
+			alert("手机号填写错误");
+			return;
+		}
+		if(!email_value.test(email)){
+			alert("邮箱格式填写错误");
+			return;
+		}		
+		$.ajax({
+			url:"http://192.168.1.107:8080/shopxx30/api/register/submit1.jhtml",
+			data:{"a":userName,"b":phone,"c":password,"d":email},
+			type:"GET",
+			dataType:"json",
+			success: function(vdata){
+				alert(vdata.msg);
+				if(vdata.msg == "注册成功"){
+					document.location.href="login.html";
+				}
+			}
+		});
+		
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="divPosition">
+	<div id="logIn">
+    	<a data-role="button" data-rel="back" data-icon="back" data-icon="grid"><img src="../imgs/1.png"></a>
+        <center>
+        	<h1>会员注册</h1>
+        </center>
+    </div>
+    <div id="title" class="cb">
+    	<center>共舞互联网+ , 创业赢未来</center>
+    </div>
+    <form method="post">
+        <table>
+            <tr>
+                <td>账户名</td>
+                <td><input type="text" id="userName"></td>
+            </tr>
+            <tr>
+                <td>登录密码</td>
+                <td><input type="password" id="passWord"></td>
+            </tr>
+            <tr>
+                <td>确认密码</td>
+                <td><input type="password" id="password2"></td>
+            </tr>
+        </table>
+        <!--
+        <div  class="address">
+        	<label>所在地区</label>
+            <select data-role="none">
+            	<option>选择省</option>
+            </select>
+            <select data-role="none">
+            	<option>选择市</option>
+            </select>
+            <select data-role="none">
+            	<option>选择区</option>
+            </select>
+        </div>
+        -->
+        <div class="main">
+            <select id="loc_province" data-role="none" style="width:100px; margin-left:10px; text-align:center">
+            </select>
+            <select id="loc_city" data-role="none" style="width:100px; margin-left:10px; text-align:center">
+            </select>
+            <select id="loc_town" data-role="none" style="width:100px; margin-left:10px; text-align:center">
+            </select>
+        </div>
+        <div class="city cb">
+        	<label>详细地址</label>
+            <input type="text" placeholder="此地址默认为收货地址" id="Address">
+            <div class="cb"></div>
+        </div>
+        <table class="userInfo cb">
+            <tr>
+                <td>手机号码</td>
+                <td><input type="text" id="phone"></td>
+            </tr>
+            <tr>
+                <td>邮箱号</td>
+                <td><input type="text" id="email"></td>
+            </tr>
+            <!--
+            <tr>
+                <td>验证码</td>
+                <td><input type="text" id="captcha"><span><img title="点击更换验证码" alt="验证码" src=""></span></td>
+            </tr>
+            -->
+        </table>
+        <div class="btn">
+        	<input type='submit' value='注 册' class='submit_btn' data-role="none">
+        </div>        
+    </form>
+    <center>注册即视为同意<a data-ajax="false" href="#">《土八酷服务协议》</a></center>
+</div>
+</body>
+</html>
